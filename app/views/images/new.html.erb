@@ -1,0 +1,14 @@
+<%= form_for :image, url: images_path do |f| %>
+    <p>
+      <%= f.label :user %><br>
+      <%= f.text_field :user %>
+    </p>
+    <p>
+      <%= f.label :link %><br>
+      <%= f.text_field :link %>
+    </p>
+
+    <p>
+      <%= f.submit "Submit Link" %>
+    </p>
+<% end %>

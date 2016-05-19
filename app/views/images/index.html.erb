@@ -1,0 +1,22 @@
+<h1>Listing User and Link</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>User</th>
+    <th>Image_Link</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <% @images.each do |image| %>
+      <tr>
+        <td><%= image.user %></td>
+        <td><img src = "<%= image.link %>" height="170" width="170" ></td>
+      </tr>
+  <% end %>
+</table>
+
+<br>
+
+<%= link_to 'New Image_link', new_image_path %>
