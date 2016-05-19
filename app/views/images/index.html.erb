@@ -1,5 +1,7 @@
-<h1>Listing User and Link</h1>
+<% provide(:title, "Home") %>
 
+
+<h1>Listing User and Link</h1>
 <table>
   <thead>
   <tr>
@@ -12,7 +14,8 @@
   <% @images.each do |image| %>
       <tr>
         <td><%= image.user_name %></td>
-        <td><img src = "<%= image.link %>" height="170" width="170" ></td>
+        <td><img src="<%= image.link %>"></td>
+        <td><%= link_to 'Show', image %></td>
       </tr>
   <% end %>
 </table>
@@ -20,3 +23,4 @@
 <br>
 
 <%= link_to 'New Image_link', new_image_path %>
+
