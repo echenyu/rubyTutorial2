@@ -14,7 +14,7 @@
   <% @images.each do |image| %>
       <tr>
         <td><%= image.user_name %></td>
-        <td><img src="<%= image.link %>"></td>
+        <td><img class="image_restrictions" src="<%= image.link %>"></td>
         <td><%= link_to 'Show', image %></td>
       </tr>
   <% end %>
