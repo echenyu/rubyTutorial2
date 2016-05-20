@@ -1,5 +1,7 @@
 <% provide(:title, "Create") %>
-
+<% if flash[:notice] %>
+    <p class='notice'><%= flash[:notice] %></p>
+<% end %>
 <%= form_for :image, url: images_path do |f| %>
     <p>
       <%= f.label :user_name %><br>
