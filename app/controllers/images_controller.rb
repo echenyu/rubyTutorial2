@@ -24,6 +24,11 @@ class ImagesController < ApplicationController
     end
   end
 
+  def destroy
+    Image.destroy(params[:id])
+    redirect_to images_path
+  end
+
   private
 
   def valid_link?(link)

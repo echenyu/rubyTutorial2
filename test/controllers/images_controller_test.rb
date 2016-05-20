@@ -37,4 +37,12 @@ class ImagesControllerTest < ActionController::TestCase
       post :create, image
     end
   end
+
+  test 'image_deleted' do
+    image = { image: { user_name: 'Eric', link: 'http://a.fssta.com/content/dam/fsdigital/fscom/NCAA-BK/images/2015/05/27/042616-Charlotte-Hornets-Jeremy-Lin.vadapt.980.high.77.jpg'} }
+    post :create, image
+    assert_difference 'Image.count', -1 do
+      post :destroy, :id => 1
+    end
+  end
 end
