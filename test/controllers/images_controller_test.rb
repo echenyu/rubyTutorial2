@@ -17,4 +17,10 @@ class ImagesControllerTest < ActionController::TestCase
     assert_equal 'eric', image.user_name
     assert_equal 'http://image', image.link
   end
+
+  test 'title is correct' do
+    get :index
+    assert_response :success
+    assert_select "title", "Home | Ropes Course"
+  end
 end
