@@ -16,6 +16,8 @@
         <td><%= image.user_name %></td>
         <td><img class="image_restrictions" src="<%= image.link %>"></td>
         <td><%= link_to 'Show', image %></td>
+        <td><%= link_to 'Destroy', image, method: :delete,
+                                          data: {confirm: 'Are you sure you want to delete this image?'}%></td>
       </tr>
   <% end %>
 </table>
