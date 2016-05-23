@@ -40,7 +40,7 @@ class ImagesControllerTest < ActionController::TestCase
 
   test 'image_deleted' do
     assert_difference 'Image.count', -1 do
-      post :destroy, :id => 1
+      post :destroy, id: 1
     end
   end
 end
