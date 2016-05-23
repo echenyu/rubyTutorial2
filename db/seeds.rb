@@ -1,10 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+
 Image.destroy_all
 
 users = ['Eric', 'John', 'Jerry', 'Ping', 'Perry', 'Polo',
@@ -33,7 +29,7 @@ images = ['http://coolwildlife.com/wp-content/uploads/galleries/post-3004/Fox%20
           'http://p6.zdassets.com/hc/settings_assets/844557/200176517/8sE6g6A5l3Y7Vo3VkYerFQ-awesome_avatar_576px.png'
 ]
 
-(0..19).each do |count|
-  new_image = Image.new(user_name: users[count], link: images[count])
+users.zip(images).each do |user, link|
+  new_image = Image.new(user_name: user, link: link)
   new_image.save!
 end
