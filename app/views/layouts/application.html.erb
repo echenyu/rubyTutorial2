@@ -7,9 +7,10 @@
   <%= stylesheet_link_tag 'images' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
-</body>
+  <body>
+    <%= render 'layouts/navigation' %>
+    <div class = "container">
+      <%= yield %>
+    </div>
+  </body>
 </html>
