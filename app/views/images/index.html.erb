@@ -1,26 +1,21 @@
 <% provide(:title, "Home") %>
 
+      <h1>PhotoSharer</h1>
+      <div class = "container">
+          <% @images.each_with_index do |image, count| %>
+            <% if count % 3 == 0 %>
+            <div class = "row">
+            <% end %>
+              <div class = "col-md-4">
+                <a href = images/<%= image.id %> class = "thumbnail">
+                  <img class="image_restrictions" src="<%= image.link %>">
+                  <p class = "center"><%= image.user_name %></p>
+                </a>
+              </div>
+            <% if count % 3 == 2 %>
+            </div>
+            <% end %>
 
-<h1>Listing User and Link</h1>
-<table>
-  <thead>
-  <tr>
-    <th>User</th>
-    <th>Image_Link</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-
-  <% @images.each do |image| %>
-      <tr>
-        <td><%= image.user_name %></td>
-        <td><img class="image_restrictions" src="<%= image.link %>"></td>
-        <td><%= link_to 'Show', image %></td>
-      </tr>
-  <% end %>
-</table>
-
-<br>
-
-<%= link_to 'New Image_link', new_image_path %>
-
+          <% end %>
+        </div>
+      </div>
