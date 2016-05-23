@@ -1,7 +1,5 @@
 <% provide(:title, "Create") %>
-<% if flash[:notice] %>
-    <p class='notice'><%= flash[:notice] %></p>
-<% end %>
+
 <%= form_for :image, url: images_path do |f| %>
     <p>
       <%= f.label :user_name %><br>
@@ -10,6 +8,11 @@
     <p>
       <%= f.label :link %><br>
       <%= f.text_field :link %>
+
+      <!--Not the best inline implementation. Could use simple-form gem instead-->
+      <% if flash[:notice] %>
+        <span class='notice help-inline'><%= flash[:notice] %></span>
+      <% end %>
     </p>
 
     <p>

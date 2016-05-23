@@ -20,7 +20,7 @@ class ImagesController < ApplicationController
       redirect_to images_path
     else
       flash[:notice] = 'Make sure your link goes to an image'
-      redirect_to new_image_path
+      redirect_to new_path
     end
   end
 
