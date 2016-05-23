@@ -1,1 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  user_name: "Eric"
+  link: "http://a.fssta.com/content/dam/fsdigital/fscom/NCAA-BK/images/2015/05/27/042616-Charlotte-Hornets-Jeremy-Lin.vadapt.980.high.77.jpg"
+
