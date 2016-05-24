@@ -1,21 +1,15 @@
 <% provide(:title, "Home") %>
 
-      <h1>PhotoSharer</h1>
-      <div class = "container">
-          <% @images.each_with_index do |image, count| %>
-            <% if count % 3 == 0 %>
-            <div class = "row">
-            <% end %>
-              <div class = "col-md-4">
-                <a href = images/<%= image.id %> class = "thumbnail">
-                  <img class="image_restrictions" src="<%= image.link %>">
-                  <p class = "center"><%= image.user_name %></p>
-                </a>
-              </div>
-            <% if count % 3 == 2 %>
-            </div>
-            <% end %>
-
+<h1>PhotoSharer</h1>
+<div class="container">
+  <div class="row">
+    <% @images.each do |image| %>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <%= link_to(image) do %>
+              <img class="image_restrictions" src="<%= image.link %>">
+              <p class="center"><%= image.user_name %></p>
           <% end %>
         </div>
-      </div>
+    <% end %>
+  </div>
+</div>
